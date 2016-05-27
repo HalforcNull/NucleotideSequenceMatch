@@ -84,7 +84,13 @@ public class MatchManager {
     public int diffCount(GenSet gs1, GenSet gs2) {
         int diffResult = 0;
         for (int i = 0; i < 24; i++) {
-            diffResult += diffDictionary[gs1.getCode(i) * 256 + gs2.getCode(i)];
+            int gsCode1 = gs1.getCode(i);
+            int gsCode2 = gs2.getCode(i);
+            
+            if(gsCode1 != gsCode2)
+            {
+                diffResult += diffDictionary[gs1.getCode(i) * 256 + gs2.getCode(i)];
+            }
             if (diffResult > 3) {
                 return diffResult;
             }
