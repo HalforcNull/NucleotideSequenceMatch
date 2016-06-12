@@ -20,18 +20,18 @@ public class MatchManager {
         initDiffTable();
     }
 
-    public void run() {
+    public void run(String inputFile, String resultFile) {
         FileInputStream fIn = null;
         FileOutputStream fOut = null;
 
         try {
-            fIn = new FileInputStream("EncodedFile.txt");
+            fIn = new FileInputStream(inputFile);
         } catch (Exception e) {
             System.out.println("Error in open Encoded File");
         }
 
         try {
-            fOut = new FileOutputStream("result.txt");
+            fOut = new FileOutputStream(resultFile);
         } catch (Exception e) {
             System.out.println("Error in open result file");
         }

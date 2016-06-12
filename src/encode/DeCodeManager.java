@@ -21,18 +21,18 @@ public class DeCodeManager {
         generateCodeDictionary();
     }
             
-    public void run() throws IOException
+    public void run(String resultFile) throws IOException
     {
         FileInputStream Fs = null;
         FileOutputStream FsOut = null;
         try {
-            Fs = new FileInputStream("result.txt");
+            Fs = new FileInputStream(resultFile);
         } catch (Exception e) {
             System.out.println("Cannot open test.txt file.");
         }
 
         try {
-            FsOut = new FileOutputStream("plaintext.txt");
+            FsOut = new FileOutputStream("FinalResult_PlainText.txt");
         } catch (Exception e) {
             System.out.println("Cannot open the output file.");
         }
