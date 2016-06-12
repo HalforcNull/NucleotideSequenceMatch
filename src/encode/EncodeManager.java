@@ -16,20 +16,28 @@ import java.util.Scanner;
  */
 public class EncodeManager {
 
+    private String rawFile = "";
+    private String encodedFile = "";
+    
+    public EncodeManager(String raw, String out){
+        rawFile = raw;
+        encodedFile = out;
+    }
+    
     public void runTheEncode() throws IOException {
         FileInputStream Fs = null;
         FileOutputStream FsOut = null;
         FileOutputStream FsOut2 = null;
         try {
-            Fs = new FileInputStream("test.txt");
+            Fs = new FileInputStream(rawFile);
         } catch (Exception e) {
-            System.out.println("Cannot open test.txt file.");
+            System.out.println("Cannot open test.txt file: " + rawFile);
         }
 
         try {
-            FsOut = new FileOutputStream("EncodedFile.txt");
+            FsOut = new FileOutputStream(encodedFile);
         } catch (Exception e) {
-            System.out.println("Cannot open the output file.");
+            System.out.println("Cannot open the output file: " + encodedFile);
         }
 
         try {

@@ -29,4 +29,12 @@ public class GenSet {
     public String getRawData() {
         return rawStr;
     }
+    
+    public boolean isSame(GenSet v2){
+        for(int i = 0; i < 24; i++){
+            if(data[i] != v2.data[i])
+                return false;
+        }
+        return true;
+    }
 }
